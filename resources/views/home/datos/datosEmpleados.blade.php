@@ -28,8 +28,8 @@
                     type: "POST",
                     url: url,
                     data: formData,
-                    processData: false, // tell jQuery not to process the data
-                    contentType: false, // tell jQuery not to set contentType
+                    processData: false,
+                    contentType: false,
                     success: function(data) {
 
                         $("#imagen_empleado").attr("src", "img/" + data);

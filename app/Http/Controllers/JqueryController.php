@@ -15,9 +15,11 @@ class JqueryController extends Controller
     {
         $tienda = Tienda::all();
         $ventas = Venta::all();
+        $productos = Producto::all();
 
         return view("home.Vista")
             ->with(['Tiendas' => $tienda])
+            ->with(['productos' => $productos])
             ->with(['ventas' => $ventas]);
     }
 

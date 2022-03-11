@@ -1,28 +1,33 @@
-<div>
-    Formulario Ventas del {{ $producto->Nombre }} {{ $producto->Codigo }}
-</div>
-<div>
-    Costo(c/u):{{ $producto->Costo }}
-    <input type="hidden" id="costo_id" value="{{ $producto->Costo }}">
-</div>
-<div>
-    Total:
-    <div id="total_id">
-
+<center>
+    <div>
+        <h2>Formulario Ventas del {{ $producto->Nombre }} {{ $producto->Codigo }}</h2>
     </div>
-</div>
-<div>
-    <img src="{{ asset('img/default-placeholder.png') }}" alt="Imagen" height="100" id="imagen_producto">
-</div>
-<div>
-    Cantidad
-    <input type="number" id="cantidad_id">
-</div>
-<div>
-    @csrf
-    <button id="submit">Realizar Venta</button>
-</div>
+    <br>
+    <div>
+        Costo(c/u):{{ $producto->Costo }}
+        <input type="hidden" id="costo_id" value="{{ $producto->Costo }}">
+    </div>
+    <br>
+    <div>
+        Total:
+        <div id="total_id">
 
+        </div>
+    </div>
+    <div>
+        <img src="{{ asset('img/default-placeholder.png') }}" alt="Imagen" height="100" id="imagen_producto">
+    </div>
+    <br>
+    <div>
+        Cantidad
+        <input type="number" id="cantidad_id">
+    </div>
+    <br>
+    <div>
+        @csrf
+        <button type="button" class="btn btn-outline-info" id="submit">Realizar Venta</button>
+    </div>
+</center>
 <script>
     $(document).ready(function() {
 
@@ -38,8 +43,8 @@
             type: "POST",
             url: url,
             data: formData,
-            processData: false, // tell jQuery not to process the data
-            contentType: false, // tell jQuery not to set contentType
+            processData: false,
+            contentType: false,
             success: function(data) {
 
                 $("#imagen_producto").attr("src", "img/" + data);

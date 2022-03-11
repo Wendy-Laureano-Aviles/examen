@@ -14,7 +14,6 @@
         $('#productos_id').change(function() {
             var producto = $('#productos_id').val();
             console.log("Producto seleccionada:" + producto);
-            //alert (producto); 
             if (producto == 0) {
                 $("#formulario_id").empty();
             } else {
